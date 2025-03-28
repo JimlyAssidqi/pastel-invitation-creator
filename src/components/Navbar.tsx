@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-pastel-lavender bg-clip-text text-transparent">
-            UndanganKu
+            Youvitation
           </h1>
         </Link>
 
