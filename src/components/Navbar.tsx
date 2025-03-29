@@ -83,10 +83,10 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
             <Link to="/admin">Masuk</Link>
           </Button>
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
             <Link to="/admin/create">Buat Undangan</Link>
           </Button>
         </div>
@@ -115,10 +115,10 @@ const Navbar = () => {
               </button>
             ))}
             <div className="flex flex-col gap-2 mt-2">
-              <Button asChild variant="outline" size="sm">
+              <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
                 <Link to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</Link>
               </Button>
-              <Button asChild size="sm">
+              <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
                 <Link to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</Link>
               </Button>
             </div>
