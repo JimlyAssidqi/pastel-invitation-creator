@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -7,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Navbar from "@/components/Navbar";
 
 // Mock data for the landing page
 const stats = {
@@ -112,8 +112,10 @@ const faqs = [
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             Undangan Digital Elegan untuk Momen Spesial Anda
@@ -149,7 +151,7 @@ const LandingPage = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="tentang" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
@@ -178,7 +180,7 @@ const LandingPage = () => {
       </section>
 
       {/* Theme Gallery */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="tema" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Tema Undangan</h2>
@@ -216,7 +218,7 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="cara-kerja" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Cara Kerja</h2>
@@ -243,7 +245,7 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section id="testimonial" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Testimonial</h2>
@@ -279,7 +281,7 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Pertanyaan Umum</h2>

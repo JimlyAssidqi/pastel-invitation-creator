@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,13 +24,34 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+    
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // header height + some padding
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const navLinks = [
-    { name: "Beranda", href: "/" },
-    { name: "Tentang", href: "/#tentang" },
-    { name: "Tema", href: "/#tema" },
-    { name: "Cara Kerja", href: "/#cara-kerja" },
-    { name: "Testimonial", href: "/#testimonial" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "Beranda", href: "/", action: () => setIsMenuOpen(false) },
+    { name: "Tentang", href: "/#tentang", action: () => scrollToSection("tentang") },
+    { name: "Tema", href: "/#tema", action: () => scrollToSection("tema") },
+    { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },
+    { name: "Testimonial", href: "/#testimonial", action: () => scrollToSection("testimonial") },
+    { name: "FAQ", href: "/#faq", action: () => scrollToSection("faq") },
   ];
 
   return (
@@ -50,13 +72,13 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.name}
-              href={link.href}
+              onClick={link.action}
               className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               {link.name}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -84,14 +106,13 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg py-4">
           <div className="container flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={link.action}
+                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors py-2 text-left"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
             <div className="flex flex-col gap-2 mt-2">
               <Button asChild variant="outline" size="sm">
