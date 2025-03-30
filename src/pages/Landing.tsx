@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -14,6 +15,17 @@ const stats = {
   happyCustomers: "5,000+",
   themes: "50+",
 };
+
+// Words for the animated text effect with their corresponding colors
+const animatedWords = [
+  { word: "Elegan", color: "text-purple-600" },
+  { word: "Premium", color: "text-blue-600" },
+  { word: "Exclusive", color: "text-emerald-600" },
+  { word: "Modern", color: "text-rose-600" },
+  { word: "Classy", color: "text-amber-600" },
+  { word: "Luxury", color: "text-indigo-600" },
+  { word: "Luxe", color: "text-pink-600" },
+];
 
 const themes = [
   {
@@ -110,6 +122,27 @@ const faqs = [
 ];
 
 const LandingPage = () => {
+  // State for the animated text effect
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const currentWord = animatedWords[wordIndex];
+
+  // Effect for word cycling
+  useEffect(() => {
+    const transitionInterval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      // Change the word after the fade-out transition
+      setTimeout(() => {
+        setWordIndex((prevIndex) => (prevIndex + 1) % animatedWords.length);
+        setIsTransitioning(false);
+      }, 500); // Half of the transition duration
+      
+    }, 3000); // Change every 3 seconds
+    
+    return () => clearInterval(transitionInterval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50">
       <Navbar />
@@ -118,7 +151,16 @@ const LandingPage = () => {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            Undangan Digital Elegan untuk Momen Spesial Anda
+            Undangan Digital{" "}
+            <span 
+              className={`inline-block transition-all duration-1000 ease-in-out ${
+                isTransitioning ? "opacity-0 transform -translate-y-3" : "opacity-100 transform translate-y-0"
+              } ${currentWord.color}`}
+            >
+              {currentWord.word}
+            </span>
+            <br />
+            untuk Momen Spesial Anda
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Buat undangan digital yang indah dan personal untuk acara spesial Anda dengan mudah
