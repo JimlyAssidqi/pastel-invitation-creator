@@ -14,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/
 import { useForm } from "react-hook-form";
 
 const CreateInvitation = () => {
+  // Store the current step in state
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     // Template details
@@ -92,13 +93,16 @@ const CreateInvitation = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Fix the step navigation by making it a proper function that only navigates
   const nextStep = () => {
-    setStep(prevStep => prevStep + 1);
+    console.log("Moving from step", step, "to step", step + 1);
+    setStep(step + 1);
     window.scrollTo(0, 0);
   };
 
   const prevStep = () => {
-    setStep(prevStep => prevStep - 1);
+    console.log("Moving from step", step, "to step", step - 1);
+    setStep(step - 1);
     window.scrollTo(0, 0);
   };
 
@@ -111,6 +115,7 @@ const CreateInvitation = () => {
     console.log("Form submitted:", formData);
   };
 
+  // No changes needed to renderFormStep since it's correctly returning JSX for each step
   const renderFormStep = () => {
     switch(step) {
       case 1:
@@ -801,9 +806,10 @@ const CreateInvitation = () => {
               </div>
             </div>
             
-            <form className="space-y-6">
+            {/* Prevent default form submission which might be causing the issue */}
+            <div className="space-y-6">
               {renderFormStep()}
-            </form>
+            </div>
           </CardContent>
         </Card>
       </div>
