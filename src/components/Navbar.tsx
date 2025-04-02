@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigationType } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -120,15 +119,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-amber-400 to-amber-500 border-none text-white hover:opacity-90">
-            <SafeLink to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</SafeLink>
-          </Button>
-          <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
-            <SafeLink to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</SafeLink>
-          </Button>
-        </div>
-
         {/* Mobile menu button */}
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -152,14 +142,6 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
-            <div className="flex flex-col gap-2 mt-2">
-              <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-amber-400 to-amber-500 border-none text-white hover:opacity-90">
-                <SafeLink to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</SafeLink>
-              </Button>
-              <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
-                <SafeLink to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</SafeLink>
-              </Button>
-            </div>
           </div>
         </div>
       )}

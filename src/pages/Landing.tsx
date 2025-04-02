@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -44,6 +45,34 @@ const animatedWords = [
   { word: "Classy", color: "text-amber-600" },
   { word: "Luxury", color: "text-indigo-600" },
   { word: "Luxe", color: "text-pink-600" },
+];
+
+// Featured feature items with their specific background colors and text colors
+const featuredFeatures = [
+  {
+    id: "design",
+    title: "Desain Elegan",
+    icon: <Palette className="h-10 w-10 text-purple-600" />,
+    description: "Berbagai pilihan tema dengan desain elegan dan modern",
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-600",
+  },
+  {
+    id: "easy",
+    title: "Mudah & Cepat",
+    icon: <Zap className="h-10 w-10 text-pink-600" />,
+    description: "Buat undangan digital dalam hitungan menit",
+    bgColor: "bg-pink-50",
+    iconColor: "text-pink-600",
+  },
+  {
+    id: "affordable",
+    title: "Terjangkau",
+    icon: <DollarSign className="h-10 w-10 text-blue-600" />,
+    description: "Lebih hemat dibandingkan undangan fisik",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-600",
+  },
 ];
 
 // Features data based on the provided image
@@ -239,7 +268,7 @@ const LandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              <Link to="/admin/create">Buat Undangan Sekarang</Link>
+              Buat Undangan Sekarang
             </Button>
             <Button size="lg" variant="outline">
               Lihat Tema
@@ -270,8 +299,34 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Featured Features Section (Highlighted Features) */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Fitur Utama</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Keunggulan utama yang membuat Youvitation menjadi pilihan terbaik
+            </p>
+          </ScrollAnimation>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredFeatures.map((feature) => (
+              <ScrollAnimation key={feature.id}>
+                <div className={`${feature.bgColor} p-8 rounded-xl flex flex-col items-center text-center h-full`}>
+                  <div className="mb-4 flex items-center justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
@@ -412,7 +467,7 @@ const LandingPage = () => {
             Buat undangan digital yang indah untuk acara spesial Anda sekarang
           </p>
           <Button size="lg" variant="secondary">
-            <Link to="/admin/create">Buat Undangan Sekarang</Link>
+            Buat Undangan Sekarang
           </Button>
         </ScrollAnimation>
       </section>
