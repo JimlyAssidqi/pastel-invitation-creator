@@ -1,14 +1,10 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import Navbar from "@/components/Navbar";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import ThemeCard from "@/components/ThemeCard";
 
 // All themes data
 const allThemes = [
@@ -128,28 +124,12 @@ const AllThemes = () => {
           {filteredThemes.length > 0 ? (
             filteredThemes.map((theme) => (
               <div key={theme.id} className="h-full">
-                <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow">
-                  <AspectRatio ratio={16 / 9}>
-                    <img
-                      src={theme.image}
-                      alt={theme.title}
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
-                  <CardContent className="p-6">
-                    <Badge className="mb-3 bg-purple-100 text-purple-800 hover:bg-purple-200">{theme.category}</Badge>
-                    <h3 className="text-xl font-bold mb-2">{theme.title}</h3>
-                    <p className="text-gray-600 mb-4">{theme.description}</p>
-                    <div className="flex items-center justify-between">
-                      <Button variant="outline" asChild>
-                        <Link to={`/preview/${theme.id}`}>Preview</Link>
-                      </Button>
-                      <Button asChild>
-                        <Link to={`/admin/create?theme=${theme.id}`}>Gunakan</Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ThemeCard 
+                  id={theme.id}
+                  title={theme.title}
+                  image={theme.image}
+                  category={theme.category}
+                />
               </div>
             ))
           ) : (
