@@ -1,13 +1,24 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigationType } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  
+  // Check if we're in a router context
+  let location;
+  let isRouterAvailable = false;
+  
+  try {
+    location = useLocation();
+    isRouterAvailable = true;
+  } catch (e) {
+    // We're not in a router context, use a default value
+    location = { pathname: '/' };
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +39,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     
     // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
+    if (isRouterAvailable && location.pathname !== '/') {
       window.location.href = `/#${sectionId}`;
       return;
     }
@@ -54,6 +65,14 @@ const Navbar = () => {
     { name: "FAQ", href: "/#faq", action: () => scrollToSection("faq") },
   ];
 
+  // Helper to create safe links based on whether we're in a Router context
+  const SafeLink = ({ to, children, className = "" }: { to: string, children: React.ReactNode, className?: string }) => {
+    if (isRouterAvailable) {
+      return <Link to={to} className={className}>{children}</Link>;
+    }
+    return <a href={to} className={className}>{children}</a>;
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -63,11 +82,11 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <SafeLink to="/" className="flex items-center">
           <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-pastel-lavender bg-clip-text text-transparent">
             Youvitation
           </h1>
-        </Link>
+        </SafeLink>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -84,10 +103,10 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-4">
           <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
-            <Link to="/admin">Masuk</Link>
+            <SafeLink to="/admin">Masuk</SafeLink>
           </Button>
           <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
-            <Link to="/admin/create">Buat Undangan</Link>
+            <SafeLink to="/admin/create">Buat Undangan</SafeLink>
           </Button>
         </div>
 
@@ -116,10 +135,10 @@ const Navbar = () => {
             ))}
             <div className="flex flex-col gap-2 mt-2">
               <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
-                <Link to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</Link>
+                <SafeLink to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</SafeLink>
               </Button>
               <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
-                <Link to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</Link>
+                <SafeLink to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</SafeLink>
               </Button>
             </div>
           </div>
