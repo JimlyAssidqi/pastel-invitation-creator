@@ -79,32 +79,42 @@ const features = [
   {
     id: "unlimited-guests",
     title: "Unlimited Guest Names",
-    icon: <Users className="h-8 w-8 text-purple-600" />,
+    icon: <Users className="h-10 w-10 text-purple-600" />,
     description: "Tambahkan nama tamu sebanyak yang Anda butuhkan tanpa batasan",
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-600",
   },
   {
     id: "rsvp",
     title: "RSVP",
-    icon: <Calendar className="h-8 w-8 text-pink-600" />,
+    icon: <Calendar className="h-10 w-10 text-pink-600" />,
     description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
+    bgColor: "bg-pink-50",
+    iconColor: "text-pink-600",
   },
   {
     id: "wedding-gift",
     title: "Wedding Gift",
-    icon: <Gift className="h-8 w-8 text-blue-600" />,
+    icon: <Gift className="h-10 w-10 text-blue-600" />,
     description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-600",
   },
   {
     id: "google-maps",
     title: "Google Maps",
-    icon: <MapPin className="h-8 w-8 text-amber-600" />,
+    icon: <MapPin className="h-10 w-10 text-amber-600" />,
     description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
+    bgColor: "bg-amber-50",
+    iconColor: "text-amber-600",
   },
   {
     id: "unlimited-revisions",
     title: "Unlimited Revisions",
-    icon: <RotateCw className="h-8 w-8 text-emerald-600" />,
+    icon: <RotateCw className="h-10 w-10 text-emerald-600" />,
     description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
+    bgColor: "bg-emerald-50",
+    iconColor: "text-emerald-600",
   },
 ];
 
@@ -316,15 +326,15 @@ const LandingPage = () => {
             </p>
           </ScrollAnimation>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {features.map((feature) => (
-              <ScrollAnimation key={feature.id} className="text-center">
-                <div className="bg-purple-50 p-4 rounded-xl flex flex-col items-center">
-                  <div className="mb-3">
+              <ScrollAnimation key={feature.id}>
+                <div className={`${feature.bgColor} p-8 rounded-xl flex flex-col items-center text-center h-full`}>
+                  <div className="mb-4 flex items-center justify-center">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-bold mb-1 text-purple-800">{feature.title}</h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               </ScrollAnimation>
             ))}
