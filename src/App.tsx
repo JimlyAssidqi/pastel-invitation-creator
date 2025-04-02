@@ -8,6 +8,7 @@ import LandingPage from "./pages/Landing";
 import AdminDashboard from "./pages/AdminDashboard";
 import CreateInvitation from "./pages/CreateInvitation";
 import PreviewTheme from "./pages/PreviewTheme";
+import AllThemes from "./pages/AllThemes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/create" element={<CreateInvitation />} />
           <Route path="/preview/:themeId" element={<PreviewTheme />} />
+          <Route path="/themes" element={<AllThemes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

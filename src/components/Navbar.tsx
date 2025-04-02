@@ -66,11 +66,21 @@ const Navbar = () => {
   ];
 
   // Helper to create safe links based on whether we're in a Router context
-  const SafeLink = ({ to, children, className = "" }: { to: string, children: React.ReactNode, className?: string }) => {
+  const SafeLink = ({ 
+    to, 
+    children, 
+    className = "", 
+    onClick 
+  }: { 
+    to: string, 
+    children: React.ReactNode, 
+    className?: string,
+    onClick?: () => void 
+  }) => {
     if (isRouterAvailable) {
-      return <Link to={to} className={className}>{children}</Link>;
+      return <Link to={to} className={className} onClick={onClick}>{children}</Link>;
     }
-    return <a href={to} className={className}>{children}</a>;
+    return <a href={to} className={className} onClick={onClick}>{children}</a>;
   };
 
   return (

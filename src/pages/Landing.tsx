@@ -40,25 +40,25 @@ const animatedWords = [
 // Mock data for the landing page
 const themes = [
   {
-    id: "theme-1",
-    title: "Pernikahan Elegan",
+    id: "mocha",
+    title: "Mocha",
     image: "/placeholder.svg",
     category: "Pernikahan",
-    description: "Tema elegan dengan sentuhan emas dan putih untuk pernikahan yang mewah",
+    description: "Tema elegan dengan sentuhan coklat hangat dan aksen emas untuk pernikahan yang mewah",
   },
   {
-    id: "theme-2",
-    title: "Ulang Tahun Ceria",
+    id: "rustic",
+    title: "Rustic Brown",
     image: "/placeholder.svg",
-    category: "Ulang Tahun",
-    description: "Tema ceria dan berwarna untuk perayaan ulang tahun yang meriah",
+    category: "Pernikahan",
+    description: "Tema rustic dengan warna coklat kayu dan hiasan klasik untuk pernikahan yang berkesan",
   },
   {
-    id: "theme-3",
-    title: "Baby Shower",
+    id: "royal-blue",
+    title: "Royal Blue",
     image: "/placeholder.svg",
-    category: "Keluarga",
-    description: "Tema lembut dan manis untuk menyambut si kecil",
+    category: "Pernikahan",
+    description: "Tema mewah dengan dominasi warna biru royal dan sentuhan silver untuk pernikahan yang elegan",
   },
 ];
 
@@ -277,7 +277,9 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button size="lg">Lihat Semua Tema</Button>
+            <Button size="lg" asChild>
+              <Link to="/themes">Lihat Semua Tema</Link>
+            </Button>
           </div>
         </div>
       </section>
