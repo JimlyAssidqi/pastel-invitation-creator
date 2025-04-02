@@ -46,8 +46,8 @@ const animatedWords = [
   { word: "Luxe", color: "text-pink-600" },
 ];
 
-// Featured feature items with their specific background colors and text colors
-const featuredFeatures = [
+// All features combined from featured features and regular features
+const allFeatures = [
   {
     id: "music",
     title: "Music Request",
@@ -72,49 +72,45 @@ const featuredFeatures = [
     bgColor: "bg-blue-50",
     iconColor: "text-blue-600",
   },
-];
-
-// Features data based on the provided image
-const features = [
   {
     id: "unlimited-guests",
     title: "Unlimited Guest Names",
-    icon: <Users className="h-10 w-10 text-purple-600" />,
+    icon: <Users className="h-10 w-10 text-amber-600" />,
     description: "Tambahkan nama tamu sebanyak yang Anda butuhkan tanpa batasan",
-    bgColor: "bg-purple-50",
-    iconColor: "text-purple-600",
-  },
-  {
-    id: "rsvp",
-    title: "RSVP",
-    icon: <Calendar className="h-10 w-10 text-pink-600" />,
-    description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
-    bgColor: "bg-pink-50",
-    iconColor: "text-pink-600",
-  },
-  {
-    id: "wedding-gift",
-    title: "Wedding Gift",
-    icon: <Gift className="h-10 w-10 text-blue-600" />,
-    description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
-    bgColor: "bg-blue-50",
-    iconColor: "text-blue-600",
-  },
-  {
-    id: "google-maps",
-    title: "Google Maps",
-    icon: <MapPin className="h-10 w-10 text-amber-600" />,
-    description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
     bgColor: "bg-amber-50",
     iconColor: "text-amber-600",
   },
   {
-    id: "unlimited-revisions",
-    title: "Unlimited Revisions",
-    icon: <RotateCw className="h-10 w-10 text-emerald-600" />,
-    description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
+    id: "rsvp",
+    title: "RSVP",
+    icon: <Calendar className="h-10 w-10 text-emerald-600" />,
+    description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
     bgColor: "bg-emerald-50",
     iconColor: "text-emerald-600",
+  },
+  {
+    id: "wedding-gift",
+    title: "Wedding Gift",
+    icon: <Gift className="h-10 w-10 text-indigo-600" />,
+    description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
+    bgColor: "bg-indigo-50",
+    iconColor: "text-indigo-600",
+  },
+  {
+    id: "google-maps",
+    title: "Google Maps",
+    icon: <MapPin className="h-10 w-10 text-rose-600" />,
+    description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
+    bgColor: "bg-rose-50",
+    iconColor: "text-rose-600",
+  },
+  {
+    id: "unlimited-revisions",
+    title: "Unlimited Revisions",
+    icon: <RotateCw className="h-10 w-10 text-cyan-600" />,
+    description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
+    bgColor: "bg-cyan-50",
+    iconColor: "text-cyan-600",
   },
 ];
 
@@ -290,33 +286,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Featured Features Section (Highlighted Features) */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Fitur Utama</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Keunggulan utama yang membuat Youvitation menjadi pilihan terbaik
-            </p>
-          </ScrollAnimation>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredFeatures.map((feature) => (
-              <ScrollAnimation key={feature.id}>
-                <div className={`${feature.bgColor} p-8 rounded-xl flex flex-col items-center text-center h-full`}>
-                  <div className="mb-4 flex items-center justify-center">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-800">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
+      {/* Features Section (Combined) */}
       <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -326,8 +296,8 @@ const LandingPage = () => {
             </p>
           </ScrollAnimation>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {features.map((feature) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {allFeatures.map((feature) => (
               <ScrollAnimation key={feature.id}>
                 <div className={`${feature.bgColor} p-8 rounded-xl flex flex-col items-center text-center h-full`}>
                   <div className="mb-4 flex items-center justify-center">
