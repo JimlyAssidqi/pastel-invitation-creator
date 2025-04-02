@@ -56,24 +56,10 @@ const allThemes = [
     image: "/placeholder.svg",
     category: "Ulang Tahun",
     description: "Tema modern dengan warna ungu yang elegan untuk perayaan ulang tahun dewasa",
-  },
-  {
-    id: "baby-pink",
-    title: "Baby Pink",
-    image: "/placeholder.svg",
-    category: "Baby Shower",
-    description: "Tema lembut dengan warna pink pastel untuk baby shower yang manis",
-  },
-  {
-    id: "baby-blue",
-    title: "Baby Blue",
-    image: "/placeholder.svg",
-    category: "Baby Shower",
-    description: "Tema lembut dengan warna biru pastel untuk baby shower yang menenangkan",
   }
 ];
 
-const categories = ["Semua", "Pernikahan", "Ulang Tahun", "Baby Shower"];
+const categories = ["Semua", "Pernikahan", "Ulang Tahun"];
 
 const AllThemes = () => {
   const [searchTerm, setSearchTerm] = useState("");
