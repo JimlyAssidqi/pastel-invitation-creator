@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -12,21 +11,21 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Footer from "@/components/Footer";
 import { 
+  Music, 
+  GalleryHorizontal, 
+  Heart, 
+  Users,
+  Calendar,
+  Gift,
+  MapPin,
+  RotateCw,
   Palette, 
   Zap, 
   DollarSign, 
   PaintBucket, 
   Pencil, 
   Eye, 
-  Link as LinkIcon,
-  Music,
-  Image,
-  Heart,
-  FileText,
-  MessageSquare,
-  Gift,
-  MapPin,
-  Clock
+  Link as LinkIcon
 } from "lucide-react";
 
 // Mock data for the landing page
@@ -50,26 +49,26 @@ const animatedWords = [
 // Featured feature items with their specific background colors and text colors
 const featuredFeatures = [
   {
-    id: "design",
-    title: "Desain Elegan",
-    icon: <Palette className="h-10 w-10 text-purple-600" />,
-    description: "Berbagai pilihan tema dengan desain elegan dan modern",
+    id: "music",
+    title: "Music Request",
+    icon: <Music className="h-10 w-10 text-purple-600" />,
+    description: "Pilih musik sesuai dengan selera Anda untuk memperindah undangan",
     bgColor: "bg-purple-50",
     iconColor: "text-purple-600",
   },
   {
-    id: "easy",
-    title: "Mudah & Cepat",
-    icon: <Zap className="h-10 w-10 text-pink-600" />,
-    description: "Buat undangan digital dalam hitungan menit",
+    id: "gallery",
+    title: "Gallery",
+    icon: <GalleryHorizontal className="h-10 w-10 text-pink-600" />,
+    description: "Tampilkan momen-momen spesial dalam galeri foto yang menarik",
     bgColor: "bg-pink-50",
     iconColor: "text-pink-600",
   },
   {
-    id: "affordable",
-    title: "Terjangkau",
-    icon: <DollarSign className="h-10 w-10 text-blue-600" />,
-    description: "Lebih hemat dibandingkan undangan fisik",
+    id: "love-story",
+    title: "Love Story",
+    icon: <Heart className="h-10 w-10 text-blue-600" />,
+    description: "Bagikan kisah cinta Anda dengan tampilan yang romantis",
     bgColor: "bg-blue-50",
     iconColor: "text-blue-600",
   },
@@ -78,51 +77,33 @@ const featuredFeatures = [
 // Features data based on the provided image
 const features = [
   {
-    id: "music",
-    title: "Request Musik",
-    icon: <Music className="h-8 w-8 text-purple-600" />,
-    description: "Pilih musik sesuai dengan selera Anda untuk memperindah undangan",
-  },
-  {
-    id: "gallery",
-    title: "Galery",
-    icon: <Image className="h-8 w-8 text-purple-600" />,
-    description: "Tampilkan momen-momen spesial dalam galeri foto yang menarik",
-  },
-  {
-    id: "love-story",
-    title: "Love Story",
-    icon: <Heart className="h-8 w-8 text-purple-600" />,
-    description: "Bagikan kisah cinta Anda dengan tampilan yang romantis",
-  },
-  {
     id: "unlimited-guests",
-    title: "Unlimited Nama Tamu",
-    icon: <FileText className="h-8 w-8 text-purple-600" />,
+    title: "Unlimited Guest Names",
+    icon: <Users className="h-8 w-8 text-purple-600" />,
     description: "Tambahkan nama tamu sebanyak yang Anda butuhkan tanpa batasan",
   },
   {
     id: "rsvp",
     title: "RSVP",
-    icon: <MessageSquare className="h-8 w-8 text-purple-600" />,
+    icon: <Calendar className="h-8 w-8 text-pink-600" />,
     description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
   },
   {
     id: "wedding-gift",
     title: "Wedding Gift",
-    icon: <Gift className="h-8 w-8 text-purple-600" />,
+    icon: <Gift className="h-8 w-8 text-blue-600" />,
     description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
   },
   {
     id: "google-maps",
     title: "Google Maps",
-    icon: <MapPin className="h-8 w-8 text-purple-600" />,
+    icon: <MapPin className="h-8 w-8 text-amber-600" />,
     description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
   },
   {
     id: "unlimited-revisions",
-    title: "Unlimited Revisi",
-    icon: <Clock className="h-8 w-8 text-purple-600" />,
+    title: "Unlimited Revisions",
+    icon: <RotateCw className="h-8 w-8 text-emerald-600" />,
     description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
   },
 ];
@@ -251,7 +232,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section id="beranda" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Undangan Digital{" "}
             <span 
               className={`inline-block transition-all duration-1000 ease-in-out ${
@@ -262,7 +243,7 @@ const LandingPage = () => {
             </span>
             <br />
             untuk Momen Spesial Anda
-          </h1>
+          </h2>
           <p className="text-xl text-gray-600 mb-8">
             Buat undangan digital yang indah dan personal untuk acara spesial Anda dengan mudah
           </p>
