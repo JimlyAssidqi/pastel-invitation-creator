@@ -58,7 +58,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Beranda", href: "/", action: () => setIsMenuOpen(false) },
-    { name: "Tentang", href: "/#tentang", action: () => scrollToSection("tentang") },
+    { name: "Fitur", href: "/#fitur", action: () => scrollToSection("fitur") },
     { name: "Tema", href: "/#tema", action: () => scrollToSection("tema") },
     { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },
     { name: "Testimonial", href: "/#testimonial", action: () => scrollToSection("testimonial") },
@@ -93,7 +93,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <SafeLink to="/" className="flex items-center">
-          <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-pastel-lavender bg-clip-text text-transparent">
+          <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
             Youvitation
           </h1>
         </SafeLink>
@@ -104,7 +104,7 @@ const Navbar = () => {
             <button
               key={link.name}
               onClick={link.action}
-              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-amber-700 transition-colors"
             >
               {link.name}
             </button>
@@ -112,11 +112,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
-            <SafeLink to="/admin">Masuk</SafeLink>
+          <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-amber-400 to-amber-500 border-none text-white hover:opacity-90">
+            <SafeLink to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</SafeLink>
           </Button>
           <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">
-            <SafeLink to="/admin/create">Buat Undangan</SafeLink>
+            <SafeLink to="/admin/create" onClick={() => setIsMenuOpen(false)}>Buat Undangan</SafeLink>
           </Button>
         </div>
 
@@ -138,13 +138,13 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={link.action}
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors py-2 text-left"
+                className="text-sm font-medium text-gray-700 hover:text-amber-700 transition-colors py-2 text-left"
               >
                 {link.name}
               </button>
             ))}
             <div className="flex flex-col gap-2 mt-2">
-              <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-pastel-pink to-pastel-lavender border-none text-white hover:opacity-90">
+              <Button asChild variant="outline" size="sm" className="bg-gradient-to-r from-amber-400 to-amber-500 border-none text-white hover:opacity-90">
                 <SafeLink to="/admin" onClick={() => setIsMenuOpen(false)}>Masuk</SafeLink>
               </Button>
               <Button asChild size="sm" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90">

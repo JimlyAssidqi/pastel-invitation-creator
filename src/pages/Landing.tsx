@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -16,7 +17,15 @@ import {
   PaintBucket, 
   Pencil, 
   Eye, 
-  Link as LinkIcon 
+  Link as LinkIcon,
+  Music,
+  Image,
+  Heart,
+  FileText,
+  MessageSquare,
+  Gift,
+  MapPin,
+  Clock
 } from "lucide-react";
 
 // Mock data for the landing page
@@ -35,6 +44,58 @@ const animatedWords = [
   { word: "Classy", color: "text-amber-600" },
   { word: "Luxury", color: "text-indigo-600" },
   { word: "Luxe", color: "text-pink-600" },
+];
+
+// Features data based on the provided image
+const features = [
+  {
+    id: "music",
+    title: "Request Musik",
+    icon: <Music className="h-8 w-8 text-amber-600" />,
+    description: "Pilih musik sesuai dengan selera Anda untuk memperindah undangan",
+  },
+  {
+    id: "gallery",
+    title: "Galery",
+    icon: <Image className="h-8 w-8 text-amber-600" />,
+    description: "Tampilkan momen-momen spesial dalam galeri foto yang menarik",
+  },
+  {
+    id: "love-story",
+    title: "Love Story",
+    icon: <Heart className="h-8 w-8 text-amber-600" />,
+    description: "Bagikan kisah cinta Anda dengan tampilan yang romantis",
+  },
+  {
+    id: "unlimited-guests",
+    title: "Unlimited Nama Tamu",
+    icon: <FileText className="h-8 w-8 text-amber-600" />,
+    description: "Tambahkan nama tamu sebanyak yang Anda butuhkan tanpa batasan",
+  },
+  {
+    id: "rsvp",
+    title: "RSVP",
+    icon: <MessageSquare className="h-8 w-8 text-amber-600" />,
+    description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
+  },
+  {
+    id: "wedding-gift",
+    title: "Wedding Gift",
+    icon: <Gift className="h-8 w-8 text-amber-600" />,
+    description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
+  },
+  {
+    id: "google-maps",
+    title: "Google Maps",
+    icon: <MapPin className="h-8 w-8 text-amber-600" />,
+    description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
+  },
+  {
+    id: "unlimited-revisions",
+    title: "Unlimited Revisi",
+    icon: <Clock className="h-8 w-8 text-amber-600" />,
+    description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
+  },
 ];
 
 // Mock data for the landing page
@@ -209,37 +270,28 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="tentang" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Features Section (Previously About Section) */}
+      <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kami menyediakan platform untuk membuat undangan digital yang cantik dan modern untuk berbagai acara spesial Anda
+              Berbagai fitur menarik yang akan membuat undangan digital Anda lebih berkesan
             </p>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ScrollAnimation delay={100} className="bg-purple-50 p-6 rounded-xl">
-              <div className="mb-4 flex justify-center">
-                <Palette className="h-10 w-10 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-center">Desain Elegan</h3>
-              <p className="text-gray-600 text-center">Berbagai pilihan tema dengan desain elegan dan modern</p>
-            </ScrollAnimation>
-            <ScrollAnimation delay={200} className="bg-pink-50 p-6 rounded-xl">
-              <div className="mb-4 flex justify-center">
-                <Zap className="h-10 w-10 text-pink-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-center">Mudah & Cepat</h3>
-              <p className="text-gray-600 text-center">Buat undangan digital dalam hitungan menit</p>
-            </ScrollAnimation>
-            <ScrollAnimation delay={300} className="bg-blue-50 p-6 rounded-xl">
-              <div className="mb-4 flex justify-center">
-                <DollarSign className="h-10 w-10 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-center">Terjangkau</h3>
-              <p className="text-gray-600 text-center">Lebih hemat dibandingkan undangan fisik</p>
-            </ScrollAnimation>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {features.map((feature) => (
+              <ScrollAnimation key={feature.id} className="text-center">
+                <div className="bg-amber-50 p-4 rounded-xl flex flex-col items-center">
+                  <div className="mb-3">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-1 text-amber-800">{feature.title}</h3>
+                  <p className="text-sm text-gray-600">{feature.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
