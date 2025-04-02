@@ -76,6 +76,13 @@ export default {
 					gray: '#F1F0FB',
 					green: '#F2FCE2',
 					yellow: '#FEF7CD',
+				},
+				// Mocha theme colors
+				mocha: {
+					light: '#f9f5f1',
+					medium: '#d1b49e',
+					dark: '#5C3D2A',
+					text: '#3a2318',
 				}
 			},
 			borderRadius: {
@@ -130,6 +137,7 @@ export default {
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
 			},
 		}
 	},

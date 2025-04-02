@@ -11,6 +11,9 @@ interface ThemeCardProps {
 }
 
 const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
+  // Special handling for Mocha theme
+  const isMochaTheme = title.toLowerCase().includes('mocha');
+  
   return (
     <Card className="overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-1">
       <CardContent className="p-0">
@@ -30,7 +33,11 @@ const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
           <h3 className="text-lg font-medium mb-2">{title}</h3>
           <div className="flex justify-between items-center">
             <Button asChild variant="ghost" size="sm">
-              <Link to={`/preview/${id}`}>Lihat</Link>
+              {isMochaTheme ? (
+                <Link to={`/mocha/Nama%20Tamu`}>Lihat</Link>
+              ) : (
+                <Link to={`/preview/${id}`}>Lihat</Link>
+              )}
             </Button>
             <Button asChild size="sm">
               <Link to={`/admin/create?theme=${id}`}>Gunakan</Link>
