@@ -254,8 +254,8 @@ const LandingPage = () => {
             Buat undangan digital yang indah dan personal untuk acara spesial Anda dengan mudah
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-              Buat Undangan Sekarang
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700" asChild>
+              <Link to="/order-invitation">Order Now</Link>
             </Button>
             <Button size="lg" variant="outline">
               Lihat Tema
@@ -427,8 +427,8 @@ const LandingPage = () => {
           <p className="text-xl mb-8 opacity-90">
             Buat undangan digital yang indah untuk acara spesial Anda sekarang
           </p>
-          <Button size="lg" variant="secondary">
-            Buat Undangan Sekarang
+          <Button size="lg" variant="secondary" asChild>
+            <Link to="/order-invitation">Order Now</Link>
           </Button>
         </ScrollAnimation>
       </section>
