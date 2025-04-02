@@ -102,7 +102,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <SafeLink to="/" className="flex items-center">
-          <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
+          <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
             Youvitation
           </h1>
         </SafeLink>
@@ -119,7 +119,7 @@ const Navbar = () => {
             </button>
           ))}
           
-          <Button asChild size="sm" variant="ghost" className="bg-gradient-to-r from-primary to-amber-500 text-white hover:opacity-90">
+          <Button asChild size="sm" variant="ghost" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
             <SafeLink to="/order-invitation">
               Message Now
             </SafeLink>
@@ -149,7 +149,7 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
-            <Button asChild size="sm" className="bg-gradient-to-r from-primary to-amber-500 text-white hover:opacity-90">
+            <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
               <SafeLink to="/order-invitation">
                 Message Now
               </SafeLink>
