@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -8,12 +7,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import { 
+  Palette, 
+  Zap, 
+  DollarSign, 
+  PaintBucket, 
+  Pencil, 
+  Eye, 
+  Link as LinkIcon 
+} from "lucide-react";
 
 // Mock data for the landing page
 const stats = {
-  invitationsSent: "10,000+",
-  happyCustomers: "5,000+",
-  themes: "50+",
+  invitationsSent: 10000,
+  happyCustomers: 5000,
+  themes: 50,
 };
 
 // Words for the animated text effect with their corresponding colors
@@ -27,6 +37,7 @@ const animatedWords = [
   { word: "Luxe", color: "text-pink-600" },
 ];
 
+// Mock data for the landing page
 const themes = [
   {
     id: "theme-1",
@@ -56,25 +67,25 @@ const steps = [
     number: 1,
     title: "Pilih Tema",
     description: "Pilih tema undangan yang sesuai dengan acara Anda",
-    icon: "🎨",
+    icon: <PaintBucket className="text-purple-600 w-6 h-6" />,
   },
   {
     number: 2,
     title: "Isi Informasi",
     description: "Masukkan detail acara, tanggal, waktu, dan lokasi",
-    icon: "✏️",
+    icon: <Pencil className="text-purple-600 w-6 h-6" />,
   },
   {
     number: 3,
     title: "Preview & Selesaikan",
     description: "Tinjau undangan dan selesaikan pembuatan",
-    icon: "👁️",
+    icon: <Eye className="text-purple-600 w-6 h-6" />,
   },
   {
     number: 4,
     title: "Bagikan",
     description: "Bagikan link undangan kepada tamu Anda",
-    icon: "🔗",
+    icon: <LinkIcon className="text-purple-600 w-6 h-6" />,
   },
 ];
 
@@ -178,15 +189,21 @@ const LandingPage = () => {
         {/* Stats */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <ScrollAnimation delay={100} className="bg-white p-6 rounded-xl shadow-sm">
-            <div className="text-3xl font-bold text-purple-600">{stats.invitationsSent}</div>
+            <div className="text-3xl font-bold text-purple-600">
+              <AnimatedCounter end={stats.invitationsSent} suffix="+" />
+            </div>
             <div className="text-gray-500">Undangan Terkirim</div>
           </ScrollAnimation>
           <ScrollAnimation delay={200} className="bg-white p-6 rounded-xl shadow-sm">
-            <div className="text-3xl font-bold text-purple-600">{stats.happyCustomers}</div>
+            <div className="text-3xl font-bold text-purple-600">
+              <AnimatedCounter end={stats.happyCustomers} suffix="+" />
+            </div>
             <div className="text-gray-500">Pelanggan Puas</div>
           </ScrollAnimation>
           <ScrollAnimation delay={300} className="bg-white p-6 rounded-xl shadow-sm">
-            <div className="text-3xl font-bold text-purple-600">{stats.themes}</div>
+            <div className="text-3xl font-bold text-purple-600">
+              <AnimatedCounter end={stats.themes} suffix="+" />
+            </div>
             <div className="text-gray-500">Tema Tersedia</div>
           </ScrollAnimation>
         </div>
@@ -203,19 +220,25 @@ const LandingPage = () => {
           </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollAnimation delay={100} className="bg-purple-50 p-6 rounded-xl">
-              <div className="text-4xl mb-4">🎨</div>
-              <h3 className="text-xl font-bold mb-2">Desain Elegan</h3>
-              <p className="text-gray-600">Berbagai pilihan tema dengan desain elegan dan modern</p>
+              <div className="mb-4 flex justify-center">
+                <Palette className="h-10 w-10 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-center">Desain Elegan</h3>
+              <p className="text-gray-600 text-center">Berbagai pilihan tema dengan desain elegan dan modern</p>
             </ScrollAnimation>
             <ScrollAnimation delay={200} className="bg-pink-50 p-6 rounded-xl">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold mb-2">Mudah & Cepat</h3>
-              <p className="text-gray-600">Buat undangan digital dalam hitungan menit</p>
+              <div className="mb-4 flex justify-center">
+                <Zap className="h-10 w-10 text-pink-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-center">Mudah & Cepat</h3>
+              <p className="text-gray-600 text-center">Buat undangan digital dalam hitungan menit</p>
             </ScrollAnimation>
             <ScrollAnimation delay={300} className="bg-blue-50 p-6 rounded-xl">
-              <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-xl font-bold mb-2">Terjangkau</h3>
-              <p className="text-gray-600">Lebih hemat dibandingkan undangan fisik</p>
+              <div className="mb-4 flex justify-center">
+                <DollarSign className="h-10 w-10 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-center">Terjangkau</h3>
+              <p className="text-gray-600 text-center">Lebih hemat dibandingkan undangan fisik</p>
             </ScrollAnimation>
           </div>
         </div>
@@ -271,7 +294,7 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <ScrollAnimation key={step.number} delay={index * 100} className="text-center">
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 w-16 h-16 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {step.icon}
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -295,30 +318,9 @@ const LandingPage = () => {
               Yang pelanggan kami katakan tentang layanan kami
             </p>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <ScrollAnimation key={testimonial.id} delay={index * 100}>
-                <Card className="h-full">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold">{testimonial.name}</h3>
-                        <div className="flex text-yellow-500">
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i}>{i < testimonial.rating ? "★" : "☆"}</span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-gray-600">"{testimonial.text}"</p>
-                  </CardContent>
-                </Card>
-              </ScrollAnimation>
-            ))}
-          </div>
+          <ScrollAnimation>
+            <TestimonialCarousel testimonials={testimonials} />
+          </ScrollAnimation>
         </div>
       </section>
 
