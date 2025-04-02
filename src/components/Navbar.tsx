@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigationType } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -107,7 +108,7 @@ const Navbar = () => {
         </SafeLink>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -117,6 +118,12 @@ const Navbar = () => {
               {link.name}
             </button>
           ))}
+          
+          <Button asChild size="sm" variant="ghost" className="bg-gradient-to-r from-primary to-amber-500 text-white hover:opacity-90">
+            <SafeLink to="/order-invitation">
+              Message Now
+            </SafeLink>
+          </Button>
         </div>
 
         {/* Mobile menu button */}
@@ -142,6 +149,11 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
+            <Button asChild size="sm" className="bg-gradient-to-r from-primary to-amber-500 text-white hover:opacity-90">
+              <SafeLink to="/order-invitation">
+                Message Now
+              </SafeLink>
+            </Button>
           </div>
         </div>
       )}

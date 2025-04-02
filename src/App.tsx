@@ -11,6 +11,7 @@ import PreviewTheme from "./pages/PreviewTheme";
 import AllThemes from "./pages/AllThemes";
 import NotFound from "./pages/NotFound";
 import MochaTheme from "./pages/MochaTheme";
+import OrderInvitation from "./pages/OrderInvitation";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/preview/:themeId" element={<PreviewTheme />} />
           <Route path="/themes" element={<AllThemes />} />
           <Route path="/mocha/:guestName" element={<MochaTheme />} />
+          <Route path="/order-invitation" element={<OrderInvitation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

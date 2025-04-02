@@ -62,13 +62,13 @@ const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
             
             <div className="grid grid-cols-2 gap-2">
               <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
-                <Link to={`/admin/create?theme=${id}&type=no-photo`}>
+                <Link to={`/order-invitation?theme=${id}&type=no-photo`}>
                   <ImageOff className="h-4 w-4" />
                   <span>Tanpa Foto</span>
                 </Link>
               </Button>
               <Button asChild size="sm" className="flex gap-1 items-center w-full">
-                <Link to={`/admin/create?theme=${id}&type=with-photo`}>
+                <Link to={`/order-invitation?theme=${id}&type=with-photo`}>
                   <Image className="h-4 w-4" />
                   <span>Dengan Foto</span>
                 </Link>
