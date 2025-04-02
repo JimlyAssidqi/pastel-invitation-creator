@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -10,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Navbar from "@/components/Navbar";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Footer from "@/components/Footer";
 import { 
   Palette, 
   Zap, 
@@ -51,49 +51,49 @@ const features = [
   {
     id: "music",
     title: "Request Musik",
-    icon: <Music className="h-8 w-8 text-amber-600" />,
+    icon: <Music className="h-8 w-8 text-purple-600" />,
     description: "Pilih musik sesuai dengan selera Anda untuk memperindah undangan",
   },
   {
     id: "gallery",
     title: "Galery",
-    icon: <Image className="h-8 w-8 text-amber-600" />,
+    icon: <Image className="h-8 w-8 text-purple-600" />,
     description: "Tampilkan momen-momen spesial dalam galeri foto yang menarik",
   },
   {
     id: "love-story",
     title: "Love Story",
-    icon: <Heart className="h-8 w-8 text-amber-600" />,
+    icon: <Heart className="h-8 w-8 text-purple-600" />,
     description: "Bagikan kisah cinta Anda dengan tampilan yang romantis",
   },
   {
     id: "unlimited-guests",
     title: "Unlimited Nama Tamu",
-    icon: <FileText className="h-8 w-8 text-amber-600" />,
+    icon: <FileText className="h-8 w-8 text-purple-600" />,
     description: "Tambahkan nama tamu sebanyak yang Anda butuhkan tanpa batasan",
   },
   {
     id: "rsvp",
     title: "RSVP",
-    icon: <MessageSquare className="h-8 w-8 text-amber-600" />,
+    icon: <MessageSquare className="h-8 w-8 text-purple-600" />,
     description: "Kelola konfirmasi kehadiran tamu dengan mudah dan efisien",
   },
   {
     id: "wedding-gift",
     title: "Wedding Gift",
-    icon: <Gift className="h-8 w-8 text-amber-600" />,
+    icon: <Gift className="h-8 w-8 text-purple-600" />,
     description: "Fitur untuk menerima hadiah digital dari para tamu undangan",
   },
   {
     id: "google-maps",
     title: "Google Maps",
-    icon: <MapPin className="h-8 w-8 text-amber-600" />,
+    icon: <MapPin className="h-8 w-8 text-purple-600" />,
     description: "Tunjukkan lokasi acara dengan integrasi Google Maps yang akurat",
   },
   {
     id: "unlimited-revisions",
     title: "Unlimited Revisi",
-    icon: <Clock className="h-8 w-8 text-amber-600" />,
+    icon: <Clock className="h-8 w-8 text-purple-600" />,
     description: "Lakukan perubahan tanpa batas hingga undangan sesuai keinginan Anda",
   },
 ];
@@ -220,7 +220,7 @@ const LandingPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
+      <section id="beranda" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             Undangan Digital{" "}
@@ -270,7 +270,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Features Section (Previously About Section) */}
+      {/* Features Section */}
       <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -283,11 +283,11 @@ const LandingPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {features.map((feature) => (
               <ScrollAnimation key={feature.id} className="text-center">
-                <div className="bg-amber-50 p-4 rounded-xl flex flex-col items-center">
+                <div className="bg-purple-50 p-4 rounded-xl flex flex-col items-center">
                   <div className="mb-3">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-bold mb-1 text-amber-800">{feature.title}</h3>
+                  <h3 className="text-lg font-bold mb-1 text-purple-800">{feature.title}</h3>
                   <p className="text-sm text-gray-600">{feature.description}</p>
                 </div>
               </ScrollAnimation>
@@ -416,6 +416,8 @@ const LandingPage = () => {
           </Button>
         </ScrollAnimation>
       </section>
+
+      <Footer />
     </div>
   );
 };

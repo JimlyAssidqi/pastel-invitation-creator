@@ -44,6 +44,15 @@ const Navbar = () => {
       return;
     }
     
+    // If sectionId is "beranda", scroll to top
+    if (sectionId === "beranda") {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       const yOffset = -80; // header height + some padding
@@ -57,7 +66,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Beranda", href: "/", action: () => setIsMenuOpen(false) },
+    { name: "Beranda", href: "/#beranda", action: () => scrollToSection("beranda") },
     { name: "Fitur", href: "/#fitur", action: () => scrollToSection("fitur") },
     { name: "Tema", href: "/#tema", action: () => scrollToSection("tema") },
     { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },

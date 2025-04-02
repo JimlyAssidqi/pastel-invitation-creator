@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center mb-4">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-pastel-lavender bg-clip-text text-transparent">
-                UndanganKu
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
+                Youvitation
               </h2>
             </Link>
             <p className="text-gray-600 mb-6">
@@ -39,7 +39,7 @@ const Footer = () => {
                 <a href="/#beranda" className="text-gray-600 hover:text-primary transition-colors">Beranda</a>
               </li>
               <li>
-                <a href="/#tentang" className="text-gray-600 hover:text-primary transition-colors">Tentang Kami</a>
+                <a href="/#fitur" className="text-gray-600 hover:text-primary transition-colors">Fitur</a>
               </li>
               <li>
                 <a href="/#tema" className="text-gray-600 hover:text-primary transition-colors">Tema Undangan</a>
@@ -70,7 +70,7 @@ const Footer = () => {
 
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4">Kontak</h3>
-            <p className="text-gray-600 mb-2">Email: info@undanganku.com</p>
+            <p className="text-gray-600 mb-2">Email: info@youvitation.com</p>
             <p className="text-gray-600 mb-2">Phone: +62 123 4567 890</p>
             <p className="text-gray-600 mb-2">
               Jl. Jendral Sudirman No. 123, Jakarta Pusat, Indonesia
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 mt-10 pt-6 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} UndanganKu. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Youvitation. All rights reserved.</p>
         </div>
       </div>
     </footer>
