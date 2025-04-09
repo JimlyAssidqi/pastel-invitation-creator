@@ -127,7 +127,7 @@ const themes = [
     title: "Rustic Brown",
     image: "/placeholder.svg",
     category: "Pernikahan",
-    description: "Tema rustic dengan warna coklat kayu dan hiasan klasik untuk pernikahan yang berkesan",
+    description: "Tema rustic dengan warna coklat kayu dan hiasan klasik untuk pernikahan yang berkesan dan modern",
   },
   {
     id: "royal-blue",
@@ -415,9 +415,28 @@ const LandingPage = () => {
                     <Badge className="mb-3 bg-purple-100 text-purple-800 hover:bg-purple-200">{theme.category}</Badge>
                     <h3 className="text-xl font-bold mb-2">{theme.title}</h3>
                     <p className="text-gray-600 mb-4">{theme.description}</p>
-                    <Link to={`/preview/${theme.id}`}>
-                      <Button variant="outline" className="w-full">Preview</Button>
-                    </Link>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
+                        <Link to={`/order-invitation?theme={id}&type=no-photo`}>
+                          <ImageOff className="h-4 w-4" />
+                          <span>Tanpa Foto</span>
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white flex gap-1 items-center w-full">
+                        <Link to={`/order-invitation?theme={id}&type=with-photo`}>
+                          <Image className="h-4 w-4" />
+                          <span>Dengan Foto</span>
+                        </Link>
+                      </Button>
+                    </div>
+                    {/* <div className="grid grid-cols-2 items-center gap-x-2 w-full ">
+                      <Link to={`/preview/${theme.id}`}>
+                        <Button variant="outline" className="w-full">Tanpa Foto</Button>
+                      </Link>
+                      <Link to={`/preview/${theme.id}`}>
+                        <Button variant="outline" className="w-full">Foto</Button>
+                      </Link>
+                    </div> */}
                   </CardContent>
                 </Card>
               </ScrollAnimation>
