@@ -71,7 +71,7 @@ const Navbar = () => {
     { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },
     { name: "Harga", href: "/#pricing", action: () => scrollToSection("pricing") },
     { name: "Tema", href: "/#tema", action: () => scrollToSection("tema") },
-    { name: "Testimonial", href: "/#testimonial", action: () => scrollToSection("testimonial") },
+    { name: "Testimoni", href: "/#testimonial", action: () => scrollToSection("testimonial") },
     { name: "FAQ", href: "/#faq", action: () => scrollToSection("faq") },
   ];
 
@@ -122,7 +122,7 @@ const Navbar = () => {
           
           <Button asChild size="sm" variant="ghost" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
             <SafeLink to="/order-invitation">
-              Message Now
+              Buat Sekarang
             </SafeLink>
           </Button>
         </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
             ))}
             <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
               <SafeLink to="/order-invitation">
-                Message Now
+                Buat Sekarang
               </SafeLink>
             </Button>
           </div>

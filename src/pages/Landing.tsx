@@ -260,7 +260,7 @@ const LandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 border-0" asChild>
-              <Link to="/order-invitation">Order Now</Link>
+              <Link to="/order-invitation">Buat Sekarang</Link>
             </Button>
             <Button size="lg" variant="outline">
               Lihat Tema
@@ -376,7 +376,7 @@ const LandingPage = () => {
                   <div className="space-y-3 mb-8">
                     <div className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Semua fitur paket Tanpa Foto</span>
+                      <span>Semua fitur max</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
