@@ -10,9 +10,11 @@ interface ThemeCardProps {
   image: string;
   category: string;
   description?: string;
+  noPhoto: string;
+  photo: string;
 }
 
-const ThemeCard = ({ id, title, image, category, description }: ThemeCardProps) => {
+const ThemeCard = ({ id, title, image, category, description, noPhoto, photo }: ThemeCardProps) => {
   // Special handling for Mocha theme
   const isMochaTheme = title.toLowerCase().includes('mocha');
   
@@ -45,13 +47,13 @@ const ThemeCard = ({ id, title, image, category, description }: ThemeCardProps) 
           
           <div className="grid grid-cols-2 gap-2 mt-4">
             <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
-              <Link to={isMochaTheme ? `/mocha/Nama%20Tamu` : `/order-invitation?theme=${id}&type=no-photo`}>
+              <Link to={noPhoto}>
                 <ImageOff className="h-4 w-4" />
                 <span>Tanpa Foto</span>
               </Link>
             </Button>
             <Button asChild size="sm" className="flex gap-1 items-center w-full bg-purple-600 hover:bg-purple-700">
-              <Link to={isMochaTheme ? `/mocha/Nama%20Tamu` : `/order-invitation?theme=${id}&type=with-photo`}>
+              <Link to={photo}>
                 <Image className="h-4 w-4" />
                 <span>Dengan Foto</span>
               </Link>

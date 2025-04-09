@@ -5,57 +5,98 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ThemeCard from "@/components/ThemeCard";
+import mocha from '../assets/themes/Mocha.png';
+import rusticBrown from '../assets/themes/Rustic.png';
+import royalBlue from '../assets/themes/Royal-blue.png';
+import royalGold from '../assets/themes/Royal-gold.png';
+import skyPetals from '../assets/themes/Sky.png';
+import sweetBlush from '../assets/themes/Sweet.png';
+import rose from '../assets/themes/Rose.png';
+import purpleHaze from '../assets/themes/Purple.png';
+import brezze from '../assets/themes/Brezze.png';
 
 // All themes data
 const allThemes = [
   {
     id: "mocha",
     title: "Mocha",
-    image: "/placeholder.svg",
+    image: mocha,
     category: "Pernikahan",
     description: "Tema elegan dengan sentuhan coklat hangat dan aksen emas untuk pernikahan yang mewah",
+    noPhoto: "https://youvitation.com/mocha/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/mocha/adelio-elaina/Nama%20Tamu",
+  },
+  {
+    id: "brezze",
+    title: "Brezze",
+    image: brezze,
+    category: "Pernikahan",
+    description: "Tema elegan dengan sentuhan coklat hangat dan aksen emas untuk pernikahan yang mewah",
+    noPhoto: "https://youvitation.com/brezze/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/brezze/adelio-elaina/Nama%20Tamu",
   },
   {
     id: "rustic",
     title: "Rustic Brown",
-    image: "/placeholder.svg",
+    image: rusticBrown,
     category: "Pernikahan",
     description: "Tema rustic dengan warna coklat kayu dan hiasan klasik untuk pernikahan yang berkesan",
+    noPhoto: "https://youvitation.com/rustic-brown/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/rustic-brown/adelio-elaina/Nama%20Tamu",
   },
   {
     id: "royal-blue",
     title: "Royal Blue",
-    image: "/placeholder.svg",
+    image: royalBlue,
     category: "Pernikahan",
     description: "Tema mewah dengan dominasi warna biru royal dan sentuhan silver untuk pernikahan yang elegan",
+    noPhoto: "https://youvitation.com/royal-blue/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/royal-blue/adelio-elaina/Nama%20Tamu",
   },
   {
     id: "royal-gold",
     title: "Royal Gold",
-    image: "/placeholder.svg",
+    image: royalGold,
     category: "Pernikahan",
     description: "Tema mewah dengan sentuhan emas untuk pernikahan yang glamor",
+    noPhoto: "https://youvitation.com/royal-gold/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/royal-gold/adelio-elaina/Nama%20Tamu",
+  },
+  {
+    id: "rose",
+    title: "Rose",
+    image: rose,
+    category: "Pernikahan",
+    description: "Tema mewah dengan sentuhan emas untuk pernikahan yang glamor",
+    noPhoto: "https://youvitation.com/rose/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/rose/adelio-elaina/Nama%20Tamu",
   },
   {
     id: "sky-petals",
     title: "Sky Petals",
-    image: "/placeholder.svg",
+    image: skyPetals,
     category: "Pernikahan",
     description: "Tema lembut dengan warna biru langit dan aksen bunga untuk pernikahan outdor yang indah",
+    noPhoto: "https://youvitation.com/sky-petals/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/sky-petals/adelio-elaina/Nama%20Tamu",
   },
   {
-    id: "sky-blue",
-    title: "Sky Blue",
-    image: "/placeholder.svg",
+    id: "sweet-blush",
+    title: "Sweet Blush",
+    image: sweetBlush,
     category: "Ulang Tahun",
     description: "Tema ceria dengan warna biru langit untuk perayaan ulang tahun yang menyenangkan",
+    noPhoto: "https://youvitation.com/sweet-blush/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/sweet-blush/adelio-elaina/Nama%20Tamu",
   },
   {
     id: "purple-haze",
     title: "Purple Haze",
-    image: "/placeholder.svg",
+    image: purpleHaze,
     category: "Ulang Tahun",
     description: "Tema modern dengan warna ungu yang elegan untuk perayaan ulang tahun dewasa",
+    noPhoto: "https://youvitation.com/purple-haze/adelio-elina/Nama%20Tamu",
+    photo: "https://youvitation.com/purple-haze/adelio-elaina/Nama%20Tamu",
   }
 ];
 
@@ -116,6 +157,8 @@ const AllThemes = () => {
                   image={theme.image}
                   category={theme.category}
                   description={theme.description}
+                  noPhoto={theme.noPhoto}
+                  photo={theme.photo}
                 />
               </div>
             ))

@@ -30,6 +30,9 @@ import {
   ImageOff,
   Image
 } from "lucide-react";
+import mocha from '../assets/themes/Mocha.png';
+import royalBlue from '../assets/themes/Royal-blue.png';
+import royalGold from '../assets/themes/Royal-gold.png';
 import ThemeCard from "@/components/ThemeCard";
 
 const stats = {
@@ -119,23 +122,29 @@ const themes = [
   {
     id: "mocha",
     title: "Mocha",
-    image: "/placeholder.svg",
+    image: mocha,
     category: "Pernikahan",
     description: "Tema elegan dengan sentuhan coklat hangat dan aksen emas untuk pernikahan yang mewah",
-  },
-  {
-    id: "rustic",
-    title: "Rustic Brown",
-    image: "/placeholder.svg",
-    category: "Pernikahan",
-    description: "Tema rustic dengan warna coklat kayu dan hiasan klasik untuk pernikahan yang berkesan dan modern",
+    noPhoto: "https://youvitation.com/mocha/adelio-elaina/Nama%20Tamu",
+    photo: "https://youvitation.com/mocha/adelio-elina/Nama%20Tamu",
   },
   {
     id: "royal-blue",
     title: "Royal Blue",
-    image: "/placeholder.svg",
+    image: royalBlue,
     category: "Pernikahan",
     description: "Tema mewah dengan dominasi warna biru royal dan sentuhan silver untuk pernikahan yang elegan",
+    noPhoto: "https://youvitation.com/royal-blue/adelio-elaina/Nama%20Tamu",
+    photo: "https://youvitation.com/royal-blue/adelio-elina/Nama%20Tamu",
+  },
+  {
+    id: "royal-gold",
+    title: "Royal Gold",
+    image: royalGold,
+    category: "Pernikahan",
+    description: "Tema mewah dengan sentuhan emas untuk pernikahan yang glamor",
+    noPhoto: "https://youvitation.com/royal-gold/adelio-elaina/Nama%20Tamu",
+    photo: "https://youvitation.com/royal-gold/adelio-elina/Nama%20Tamu",
   },
 ];
 
@@ -410,6 +419,8 @@ const LandingPage = () => {
                   image={theme.image}
                   category={theme.category}
                   description={theme.description}
+                  noPhoto={theme.noPhoto}
+                  photo={theme.photo}
                 />
               </ScrollAnimation>
             ))}
