@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Image, ImageOff, DollarSign } from "lucide-react";
+import { Image, ImageOff } from "lucide-react";
 
 interface ThemeCardProps {
   id: string;
@@ -29,25 +29,9 @@ const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
               {category}
             </span>
           </div>
-          <div className="absolute top-3 right-3">
-            <div className="bg-purple-600 text-white px-3 py-1 text-xs font-bold rounded-full shadow-lg">
-              Mulai Rp80.000
-            </div>
-          </div>
         </div>
         <div className="p-4">
           <h3 className="text-lg font-medium mb-2">{title}</h3>
-          
-          <div className="grid grid-cols-2 gap-2 mb-3">
-            <div className="bg-amber-50 text-amber-800 p-2 rounded-md text-xs flex flex-col items-center text-center">
-              <span className="font-semibold">Tanpa Foto</span>
-              <span className="font-bold">Rp80.000</span>
-            </div>
-            <div className="bg-purple-50 text-purple-800 p-2 rounded-md text-xs flex flex-col items-center text-center">
-              <span className="font-semibold">Dengan Foto</span>
-              <span className="font-bold">Rp100.000</span>
-            </div>
-          </div>
           
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">

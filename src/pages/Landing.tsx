@@ -25,17 +25,18 @@ import {
   PaintBucket, 
   Pencil, 
   Eye, 
-  Link as LinkIcon
+  Link as LinkIcon,
+  Check,
+  ImageOff,
+  Image
 } from "lucide-react";
 
-// Mock data for the landing page
 const stats = {
   invitationsSent: 10000,
   happyCustomers: 5000,
   themes: 50,
 };
 
-// Words for the animated text effect with their corresponding colors
 const animatedWords = [
   { word: "Elegan", color: "text-purple-600" },
   { word: "Premium", color: "text-blue-600" },
@@ -46,7 +47,6 @@ const animatedWords = [
   { word: "Luxe", color: "text-pink-600" },
 ];
 
-// All features combined from featured features and regular features
 const allFeatures = [
   {
     id: "music",
@@ -114,7 +114,6 @@ const allFeatures = [
   },
 ];
 
-// Mock data for the landing page
 const themes = [
   {
     id: "mocha",
@@ -210,23 +209,20 @@ const faqs = [
 ];
 
 const LandingPage = () => {
-  // State for the animated text effect
   const [wordIndex, setWordIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const currentWord = animatedWords[wordIndex];
 
-  // Effect for word cycling
   useEffect(() => {
     const transitionInterval = setInterval(() => {
       setIsTransitioning(true);
       
-      // Change the word after the fade-out transition
       setTimeout(() => {
         setWordIndex((prevIndex) => (prevIndex + 1) % animatedWords.length);
         setIsTransitioning(false);
-      }, 500); // Half of the transition duration
+      }, 500);
       
-    }, 3000); // Change every 3 seconds
+    }, 3000);
     
     return () => clearInterval(transitionInterval);
   }, []);
@@ -235,7 +231,6 @@ const LandingPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-pink-50">
       <Navbar />
       
-      {/* Hero Section */}
       <section id="beranda" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
@@ -263,7 +258,6 @@ const LandingPage = () => {
           </div>
         </ScrollAnimation>
 
-        {/* Stats */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <ScrollAnimation delay={100} className="bg-white p-6 rounded-xl shadow-sm">
             <div className="text-3xl font-bold text-purple-600">
@@ -286,7 +280,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Features Section (Combined) */}
       <section id="fitur" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -312,7 +305,93 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Theme Gallery */}
+      <section id="pricing" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Paket Harga</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Pilih paket yang sesuai dengan kebutuhan undangan Anda
+            </p>
+          </ScrollAnimation>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <ScrollAnimation delay={100}>
+              <Card className="h-full transition-all hover:shadow-lg border-2">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-center mb-4">
+                    <ImageOff className="h-12 w-12 text-purple-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Tanpa Foto</h3>
+                  <div className="text-center mb-6">
+                    <span className="text-4xl font-bold text-purple-600">Rp80.000</span>
+                  </div>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Semua fitur dasar</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Daftar tamu unlimited</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>RSVP & Konfirmasi kehadiran</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Musik background</span>
+                    </div>
+                  </div>
+                  
+                  <Button size="lg" className="w-full" asChild>
+                    <Link to="/order-invitation?type=no-photo">Pesan Sekarang</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </ScrollAnimation>
+            
+            <ScrollAnimation delay={200}>
+              <Card className="h-full transition-all hover:shadow-lg border-2 border-purple-200 bg-gradient-to-b from-purple-50 to-white">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-center mb-4">
+                    <Image className="h-12 w-12 text-purple-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Dengan Foto</h3>
+                  <div className="text-center mb-6">
+                    <span className="text-4xl font-bold text-purple-600">Rp100.000</span>
+                  </div>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Semua fitur paket Tanpa Foto</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Galeri foto (max 10 foto)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Love story dengan foto</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Foto profil pasangan</span>
+                    </div>
+                  </div>
+                  
+                  <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 border-0" asChild>
+                    <Link to="/order-invitation?type=with-photo">Pesan Sekarang</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
       <section id="tema" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -352,7 +431,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* How It Works */}
       <section id="cara-kerja" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -379,7 +457,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section id="testimonial" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -394,7 +471,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
@@ -420,7 +496,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center">
         <ScrollAnimation className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Siap Untuk Membuat Undangan Digital?</h2>
