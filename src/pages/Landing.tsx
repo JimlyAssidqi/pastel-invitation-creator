@@ -404,7 +404,7 @@ const LandingPage = () => {
             {themes.map((theme, index) => (
               <ScrollAnimation key={theme.id} delay={index * 100} className="h-full">
                 <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow">
-                  <AspectRatio ratio={16 / 9}>
+                  <AspectRatio ratio={1 / 1}>
                     <img
                       src={theme.image}
                       alt={theme.title}

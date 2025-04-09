@@ -18,7 +18,7 @@ const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
   return (
     <Card className="overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-1">
       <CardContent className="p-0">
-        <div className="aspect-[3/4] relative overflow-hidden">
+        <div className="aspect-square relative overflow-hidden">
           <img 
             src={image} 
             alt={title} 
