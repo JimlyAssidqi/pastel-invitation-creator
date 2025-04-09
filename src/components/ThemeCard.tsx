@@ -34,15 +34,13 @@ const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
           <h3 className="text-lg font-medium mb-2">{title}</h3>
           
           <div className="flex flex-col gap-2">
-            <div className="flex justify-between items-center">
-              <Button asChild variant="ghost" size="sm" className="flex gap-1 items-center">
-                {isMochaTheme ? (
-                  <Link to={`/mocha/Nama%20Tamu`}>Lihat</Link>
-                ) : (
-                  <Link to={`/preview/${id}`}>Lihat</Link>
-                )}
-              </Button>
-            </div>
+            <Button asChild variant="ghost" size="sm" className="flex gap-1 items-center w-full">
+              {isMochaTheme ? (
+                <Link to={`/mocha/Nama%20Tamu`}>Lihat</Link>
+              ) : (
+                <Link to={`/preview/${id}`}>Lihat</Link>
+              )}
+            </Button>
             
             <div className="grid grid-cols-2 gap-2">
               <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
