@@ -115,6 +115,7 @@ const AllThemes = () => {
                   title={theme.title}
                   image={theme.image}
                   category={theme.category}
+                  description={theme.description}
                 />
               </div>
             ))

@@ -2,43 +2,61 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Image, ImageOff } from "lucide-react";
 
 interface ThemeCardProps {
   id: string;
   title: string;
   image: string;
   category: string;
+  description?: string;
 }
 
-const ThemeCard = ({ id, title, image, category }: ThemeCardProps) => {
+const ThemeCard = ({ id, title, image, category, description }: ThemeCardProps) => {
   // Special handling for Mocha theme
   const isMochaTheme = title.toLowerCase().includes('mocha');
   
   return (
     <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
       <CardContent className="p-0">
-        <div className="relative overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
-          />
-          <div className="absolute top-3 left-3">
-            <span className="px-3 py-1 text-xs rounded-full bg-white/80 backdrop-blur-sm text-primary">
+        <div className="aspect-square relative overflow-hidden bg-gray-100 flex items-center justify-center">
+          {image ? (
+            <img 
+              src={image} 
+              alt={title} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="text-gray-400">
+              <Image className="w-8 h-8" />
+            </div>
+          )}
+        </div>
+        <div className="p-4">
+          <div className="mb-2">
+            <span className="px-3 py-1 text-xs rounded-full bg-purple-100 text-purple-600 font-medium">
               {category}
             </span>
           </div>
-        </div>
-        <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">{title}</h3>
+          <h3 className="text-xl font-bold mb-2">{title}</h3>
+          {description && (
+            <p className="text-gray-600 text-sm mb-4">{description}</p>
+          )}
           
-          <Button asChild variant="ghost" size="sm" className="flex gap-1 items-center w-full">
-            {isMochaTheme ? (
-              <Link to={`/mocha/Nama%20Tamu`}>Lihat</Link>
-            ) : (
-              <Link to={`/preview/${id}`}>Lihat</Link>
-            )}
-          </Button>
+          <div className="grid grid-cols-2 gap-2 mt-4">
+            <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
+              <Link to={isMochaTheme ? `/mocha/Nama%20Tamu` : `/order-invitation?theme=${id}&type=no-photo`}>
+                <ImageOff className="h-4 w-4" />
+                <span>Tanpa Foto</span>
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="flex gap-1 items-center w-full bg-purple-600 hover:bg-purple-700">
+              <Link to={isMochaTheme ? `/mocha/Nama%20Tamu` : `/order-invitation?theme=${id}&type=with-photo`}>
+                <Image className="h-4 w-4" />
+                <span>Dengan Foto</span>
+              </Link>
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>
