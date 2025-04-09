@@ -30,6 +30,7 @@ import {
   ImageOff,
   Image
 } from "lucide-react";
+import ThemeCard from "@/components/ThemeCard";
 
 const stats = {
   invitationsSent: 10000,
@@ -403,42 +404,12 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {themes.map((theme, index) => (
               <ScrollAnimation key={theme.id} delay={index * 100} className="h-full">
-                <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow">
-                  <AspectRatio ratio={1 / 1}>
-                    <img
-                      src={theme.image}
-                      alt={theme.title}
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
-                  <CardContent className="p-6">
-                    <Badge className="mb-3 bg-purple-100 text-purple-800 hover:bg-purple-200">{theme.category}</Badge>
-                    <h3 className="text-xl font-bold mb-2">{theme.title}</h3>
-                    <p className="text-gray-600 mb-4">{theme.description}</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button asChild size="sm" variant="outline" className="flex gap-1 items-center w-full">
-                        <Link to={`/order-invitation?theme={id}&type=no-photo`}>
-                          <ImageOff className="h-4 w-4" />
-                          <span>Tanpa Foto</span>
-                        </Link>
-                      </Button>
-                      <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white flex gap-1 items-center w-full">
-                        <Link to={`/order-invitation?theme={id}&type=with-photo`}>
-                          <Image className="h-4 w-4" />
-                          <span>Dengan Foto</span>
-                        </Link>
-                      </Button>
-                    </div>
-                    {/* <div className="grid grid-cols-2 items-center gap-x-2 w-full ">
-                      <Link to={`/preview/${theme.id}`}>
-                        <Button variant="outline" className="w-full">Tanpa Foto</Button>
-                      </Link>
-                      <Link to={`/preview/${theme.id}`}>
-                        <Button variant="outline" className="w-full">Foto</Button>
-                      </Link>
-                    </div> */}
-                  </CardContent>
-                </Card>
+                <ThemeCard 
+                  id={theme.id}
+                  title={theme.title}
+                  image={theme.image}
+                  category={theme.category}
+                />
               </ScrollAnimation>
             ))}
           </div>
