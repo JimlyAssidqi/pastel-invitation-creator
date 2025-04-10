@@ -13,9 +13,9 @@ const TestimonialCard = ({ name, text, image, rating }: TestimonialCardProps) =>
     <Card className="overflow-hidden card-shadow">
       <CardContent className="p-6">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-full overflow-hidden">
+          {/* <div className="w-12 h-12 rounded-full overflow-hidden">
             <img src={image} alt={name} className="w-full h-full object-cover" />
-          </div>
+          </div> */}
           <div>
             <h4 className="font-medium">{name}</h4>
             <div className="flex items-center">

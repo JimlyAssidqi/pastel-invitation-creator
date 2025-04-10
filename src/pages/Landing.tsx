@@ -38,7 +38,7 @@ import ThemeCard from "@/components/ThemeCard";
 const stats = {
   invitationsSent: 10000,
   happyCustomers: 5000,
-  themes: 50,
+  themes: 12,
 };
 
 const animatedWords = [
@@ -178,93 +178,93 @@ const steps = [
 const testimonials = [
   {
     id: "1",
-    name: "Budi Santoso",
+    name: "Putri Cahyani",
     image: "/placeholder.svg",
-    text: "Undangan digital ini sangat membantu acara pernikahan kami. Tamunya modern dan elegan!",
+    text: "Undangannya bener-bener ngebantu banget! Desainnya modern dan cakep!",
     rating: 5,
   },
   {
     id: "2",
     name: "Siti Rahma",
     image: "/placeholder.svg",
-    text: "Sangat mudah digunakan dan hasilnya cantik sekali. Tamu-tamu kami sangat terkesan.",
+    text: "Gampang dipakai dan hasilnya cantik banget. Tamu-tamu juga pada suka",
     rating: 5,
   },
   {
     id: "3",
-    name: "Andi Wijaya",
+    name: "Anisa Awalia",
     image: "/placeholder.svg",
-    text: "Layanan yang sangat memuaskan. Desainnya keren dan fiturnya lengkap.",
+    text: "Pokoknya puas banget deh, desainnya keren dan fiturnya komplit",
     rating: 4,
   },
   {
     id: "4",
     name: "Diana Putri",
     image: "/placeholder.svg",
-    text: "Saya sangat senang dengan undangan digital ini. Semua tamu memuji designnya yang cantik.",
+    text: "Seneng banget sama undangan ini. Thanks Youvitation",
     rating: 5,
   },
   {
     id: "5",
-    name: "Rudi Hartono",
+    name: "Rina Eka Tri",
     image: "/placeholder.svg",
-    text: "Fitur RSVP sangat membantu kami dalam mengelola kehadiran tamu. Terima kasih Youvitation!",
+    text: "Fitur RSVP-nya ngebantu banget buat atur tamu. Makasih Youvitation!",
     rating: 5,
   },
   {
     id: "6",
-    name: "Nina Safira",
+    name: "Safira",
     image: "/placeholder.svg",
-    text: "Undangan kami terlihat sangat profesional. Proses pembuatannya juga sangat mudah.",
+    text: "Undangannya cantik bangett dan proses bikinnya juga cepet.",
     rating: 4,
   },
   {
     id: "7",
-    name: "Indra Kusuma",
+    name: "Indriana",
     image: "/placeholder.svg",
-    text: "Harga terjangkau untuk fitur yang sangat lengkap. Sangat direkomendasikan!",
+    text: "Harganya ramah di kantong tapi fiturnya lengkap banget. Wajib coba sih!",
     rating: 5,
   },
   {
     id: "8",
     name: "Maya Anggraini",
     image: "/placeholder.svg",
-    text: "Customer service sangat responsif dan membantu. Masalah kami diselesaikan dengan cepat.",
+    text: "CS-nya cepet banget responnya, Love banget dehh",
     rating: 4,
   },
   {
     id: "9",
-    name: "Deni Pratama",
+    name: "Diana",
     image: "/placeholder.svg",
-    text: "Tema Royal Gold yang kami pilih sangat elegan. Mendapat banyak pujian dari tamu undangan.",
+    text: "Tema Royal Gold-nya cakep parah! Orang-orang sampe pada bilang bikinnya dimana.",
     rating: 5,
   },
   {
     id: "10",
-    name: "Fira Handayani",
+    name: "Fira Fitriani",
     image: "/placeholder.svg",
-    text: "Sangat puas dengan pilihan musik dan galeri foto. Cocok untuk menampilkan momen spesial kami.",
+    text: "Pilihan musik sama galeri fotonya keren. Pas banget buat di pernikahan aku",
     rating: 5,
   },
   {
     id: "11",
-    name: "Bayu Nugroho",
+    name: "Bella Natasya",
     image: "/placeholder.svg",
-    text: "Fitur wedding gift memudahkan tamu untuk memberikan hadiah secara digital. Sangat praktis!",
+    text: "Fitur wedding gift-nya keren, jadi gampang kasih hadiah buat kita",
     rating: 4,
   },
   {
     id: "12",
-    name: "Laras Wati",
+    name: "Laras",
     image: "/placeholder.svg",
-    text: "Undangan digital ini membuat persiapan pernikahan kami lebih hemat dan ramah lingkungan.",
+    text: "Undangan digital ini bikin persiapan nikah jadi lebih hemat dan mudah",
     rating: 5,
   },
   {
     id: "13",
-    name: "Agus Salim",
+    name: "Ayu Salim",
     image: "/placeholder.svg",
-    text: "Interface-nya sangat user-friendly. Semua orang tua pun bisa menggunakannya dengan mudah.",
+    text: "User-friendly banget, orang tua pun gampang makainya",
     rating: 4,
   },
 ];
@@ -343,17 +343,17 @@ const LandingPage = () => {
             <div className="text-3xl font-bold text-purple-600">
               <AnimatedCounter end={stats.invitationsSent} suffix="+" />
             </div>
-            <div className="text-gray-500">Undangan Terkirim</div>
+            <div className="text-gray-500">Undangan di Bagikan</div>
           </ScrollAnimation>
           <ScrollAnimation delay={200} className="bg-white p-6 rounded-xl shadow-sm">
             <div className="text-3xl font-bold text-purple-600">
               <AnimatedCounter end={stats.happyCustomers} suffix="+" />
             </div>
-            <div className="text-gray-500">Pelanggan Puas</div>
+            <div className="text-gray-500">Undangan di Buat</div>
           </ScrollAnimation>
           <ScrollAnimation delay={300} className="bg-white p-6 rounded-xl shadow-sm">
             <div className="text-3xl font-bold text-purple-600">
-              <AnimatedCounter end={stats.themes} suffix="+" />
+              <AnimatedCounter end={stats.themes} suffix="" />
             </div>
             <div className="text-gray-500">Tema Tersedia</div>
           </ScrollAnimation>
