@@ -42,10 +42,19 @@ const Footer = () => {
                 <a href="/#fitur" className="text-gray-600 hover:text-primary transition-colors">Fitur</a>
               </li>
               <li>
+                <a href="/#pricing" className="text-gray-600 hover:text-primary transition-colors">Harga</a>
+              </li>
+              <li>
                 <a href="/#tema" className="text-gray-600 hover:text-primary transition-colors">Tema Undangan</a>
               </li>
               <li>
                 <a href="/#cara-kerja" className="text-gray-600 hover:text-primary transition-colors">Cara Kerja</a>
+              </li>
+              <li>
+                <a href="/#testimonial" className="text-gray-600 hover:text-primary transition-colors">Testimoni</a>
+              </li>
+              <li>
+                <a href="/#faq" className="text-gray-600 hover:text-primary transition-colors">FAQ</a>
               </li>
             </ul>
           </div>
@@ -56,24 +65,15 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-gray-600 hover:text-primary transition-colors">Pernikahan</a>
               </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-primary transition-colors">Ulang Tahun</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-primary transition-colors">Baby Shower</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-primary transition-colors">Acara Perusahaan</a>
-              </li>
             </ul>
           </div>
 
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4">Kontak</h3>
-            <p className="text-gray-600 mb-2">Email: info@youvitation.com</p>
-            <p className="text-gray-600 mb-2">Phone: +62 123 4567 890</p>
+            <p className="text-gray-600 mb-2">Email: service@youvitation.com</p>
+            <p className="text-gray-600 mb-2">Phone: +62 823 2932 2353</p>
             <p className="text-gray-600 mb-2">
-              Jl. Jendral Sudirman No. 123, Jakarta Pusat, Indonesia
+              Purwanegara, Purwokerto, Banyumas, Jawa Tengah
             </p>
           </div>
         </div>

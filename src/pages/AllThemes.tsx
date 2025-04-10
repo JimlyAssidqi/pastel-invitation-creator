@@ -100,7 +100,7 @@ const allThemes = [
   }
 ];
 
-const categories = ["Semua", "Pernikahan", "Ulang Tahun"];
+const categories = ["Pernikahan"];
 
 const AllThemes = () => {
   const [searchTerm, setSearchTerm] = useState("");

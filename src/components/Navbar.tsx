@@ -68,9 +68,9 @@ const Navbar = () => {
   const navLinks = [
     { name: "Beranda", href: "/#beranda", action: () => scrollToSection("beranda") },
     { name: "Fitur", href: "/#fitur", action: () => scrollToSection("fitur") },
-    { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },
     { name: "Harga", href: "/#pricing", action: () => scrollToSection("pricing") },
     { name: "Tema", href: "/#tema", action: () => scrollToSection("tema") },
+    { name: "Cara Kerja", href: "/#cara-kerja", action: () => scrollToSection("cara-kerja") },
     { name: "Testimoni", href: "/#testimonial", action: () => scrollToSection("testimonial") },
     { name: "FAQ", href: "/#faq", action: () => scrollToSection("faq") },
   ];

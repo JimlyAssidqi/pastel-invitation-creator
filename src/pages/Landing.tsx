@@ -48,7 +48,7 @@ const animatedWords = [
   { word: "Modern", color: "text-rose-600" },
   { word: "Classy", color: "text-amber-600" },
   { word: "Luxury", color: "text-indigo-600" },
-  { word: "Luxe", color: "text-pink-600" },
+  { word: "Terjangkau", color: "text-pink-600" },
 ];
 
 const allFeatures = [
@@ -158,13 +158,13 @@ const steps = [
   {
     number: 2,
     title: "Isi Informasi",
-    description: "Masukkan detail acara, tanggal, waktu, dan lokasi",
+    description: "Masukkan detail acara, tanggal, lokasi, dan lain-lain",
     icon: <Pencil className="text-purple-600 w-6 h-6" />,
   },
   {
     number: 3,
-    title: "Preview & Selesaikan",
-    description: "Tinjau undangan dan selesaikan pembuatan",
+    title: "Preview",
+    description: "Tinjau undangan dan tambahkan nama tamu",
     icon: <Eye className="text-purple-600 w-6 h-6" />,
   },
   {
@@ -272,19 +272,19 @@ const testimonials = [
 const faqs = [
   {
     question: "Bagaimana cara membuat undangan digital?",
-    answer: "Cukup pilih tema yang Anda inginkan, isi informasi acara, lalu bagikan link undangan kepada tamu Anda.",
+    answer: "Cukup pilih tema yang Anda inginkan, isi informasi acara, tambahkan nama tamu, lalu bagikan link undangan kepada tamu Anda.",
   },
   {
     question: "Berapa lama proses pembuatan undangan digital?",
     answer: "Proses pembuatan undangan digital hanya membutuhkan waktu beberapa menit saja setelah Anda mengisi semua informasi yang diperlukan.",
   },
   {
-    question: "Apakah bisa menyesuaikan tema undangan?",
-    answer: "Ya, Anda dapat menyesuaikan warna dan gaya tema undangan sesuai preferensi Anda.",
+    question: "Bagaiman cara pembayarannya?",
+    answer: "Setelah mengisi semua informasi acara, Anda dapat membayar pembuatan undangan digital melalui metode pembayaran yang tersedia.",
   },
   {
     question: "Bagaimana cara membagikan undangan digital?",
-    answer: "Anda akan mendapatkan link undangan yang dapat dibagikan melalui email, pesan teks, atau media sosial.",
+    answer: "Anda akan mendapatkan link undangan yang dapat dibagikan melalui email, whatsapp, atau media sosial.",
   },
 ];
 
@@ -496,7 +496,7 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button size="lg" asChild>
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
               <Link to="/themes">Lihat Semua Tema</Link>
             </Button>
           </div>
@@ -532,9 +532,9 @@ const LandingPage = () => {
       <section id="testimonial" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Testimonial</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Testimoni</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Yang pelanggan kami katakan tentang layanan kami
+              Apa kata meraka yang sudah menggunakan undangan digital kami
             </p>
           </ScrollAnimation>
           <ScrollAnimation>
