@@ -38,7 +38,7 @@ import ThemeCard from "@/components/ThemeCard";
 const stats = {
   invitationsSent: 10000,
   happyCustomers: 5000,
-  themes: 12,
+  themes: 9,
 };
 
 const animatedWords = [
@@ -450,7 +450,7 @@ const LandingPage = () => {
                     </div>
                     <div className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Galeri foto (max 10 foto)</span>
+                      <span>Galeri foto</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -458,7 +458,7 @@ const LandingPage = () => {
                     </div>
                     <div className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Foto profil pasangan</span>
+                      <span>Foto prewedding pasangan</span>
                     </div>
                   </div>
                   
