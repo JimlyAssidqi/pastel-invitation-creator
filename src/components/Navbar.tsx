@@ -121,7 +121,7 @@ const Navbar = () => {
           ))}
           
           <Button asChild size="sm" variant="ghost" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
-            <SafeLink to="/order-invitation">
+            <SafeLink to="/order-invitation" onClick={() => window.scrollTo(0, 0)}>
               Buat Sekarang
             </SafeLink>
           </Button>
@@ -151,7 +151,7 @@ const Navbar = () => {
               </button>
             ))}
             <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
-              <SafeLink to="/order-invitation">
+              <SafeLink to="/order-invitation" onClick={() => window.scrollTo(0, 0)}>
                 Buat Sekarang
               </SafeLink>
             </Button>

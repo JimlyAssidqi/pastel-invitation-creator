@@ -497,7 +497,7 @@ const LandingPage = () => {
           </div>
           <div className="text-center mt-10">
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:opacity-90">
-              <Link to="/themes">Lihat Semua Tema</Link>
+              <Link to="/themes" onClick={() => window.scrollTo(0, 0)}>Lihat Semua Tema</Link>
             </Button>
           </div>
         </div>
@@ -575,7 +575,7 @@ const LandingPage = () => {
             Buat undangan digital yang indah untuk acara spesial Anda sekarang
           </p>
           <Button size="lg" variant="secondary" asChild>
-            <Link to="/order-invitation">Order Now</Link>
+            <Link to="/order-invitation" onClick={() => window.scrollTo(0, 0)}>Order Now</Link>
           </Button>
         </ScrollAnimation>
       </section>

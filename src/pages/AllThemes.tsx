@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search } from "lucide-react";
@@ -106,6 +105,11 @@ const AllThemes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("Semua");
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Filter themes based on search term and category
   const filteredThemes = allThemes.filter((theme) => {
     const matchesSearch = theme.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -139,6 +143,7 @@ const AllThemes = () => {
           </div>
           <Tabs defaultValue="Semua" value={activeCategory} onValueChange={setActiveCategory}>
             <TabsList>
+              <TabsTrigger value="Semua">Semua</TabsTrigger>
               {categories.map((category) => (
                 <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
               ))}
